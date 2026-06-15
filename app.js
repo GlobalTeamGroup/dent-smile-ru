@@ -1,11 +1,11 @@
 ﻿/* =============================================
-   DENT SMILE â€” app.js
+   DENT SMILE — app.js
    Cinematic Scroll Engine v2 (Ice Blue Medical)
    ============================================= */
 
 // === CONSTANTS ===
 // TOTAL_FRAMES: will be updated after ffmpeg finishes
-// Formula: N_sections Ã— clip_length_sec Ã— fps
+// Formula: N_sections × clip_length_sec × fps
 const TOTAL_FRAMES = 380;     // dent-smile-ru frames
 const PAGE_COUNT   = 6;
 const LERP         = 0.02;   // cinematic slowness
@@ -103,7 +103,7 @@ function drawFrame(idx) {
   const img = frames[Math.max(0, Math.min(Math.round(idx), TOTAL_FRAMES - 1))];
   if (!img || !img.complete) return;
 
-  // IMPORTANT: use innerWidth/innerHeight â€” ctx.setTransform already scales for dpr!
+  // IMPORTANT: use innerWidth/innerHeight — ctx.setTransform already scales for dpr!
   // Do NOT use canvas.width / devicePixelRatio on mobile (dpr may differ from real)
   const W = innerWidth;
   const H = innerHeight;
