@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>DENT SMILE — Стоматологическая Клиника в Москве</title>
+  <meta name="description" content="DENT SMILE — премиум стоматология в Москве. Импланты All-on-4/All-on-6, виниры E.max, отбеливание Zoom, голливудская улыбка. Первичная консультация бесплатно. +7 (499) 789-01-23" />
+  <meta name="keywords" content="стоматология Москва, импланты, виниры, отбеливание зубов, голливудская улыбка, DENT SMILE, All-on-6, E.max виниры, Zoom отбеливание" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="DENT SMILE — Стоматология будущего" />
+  <meta property="og:description" content="Цифровой слепок зубов, импланты, люминиры, виниры. Без боли и с улыбкой. Первичная консультация бесплатно." />
+  <meta property="og:image" content="images/logo.png" />
+  <meta property="og:url" content="https://dentsmile.ru" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ru_RU" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <!-- Fonts: Playfair Display + Lato -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- CINEMATIC CANVAS BACKGROUND -->
+  <canvas id="gl-canvas"></canvas>
+  <!-- GRAIN OVERLAY -->
+  <div class="grain-overlay"></div>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">
+        <span class="loader-brand">DENT</span>
+        <span class="loader-accent">SMILE</span>
+      </div>
+      <div class="loader-bar-wrap">
+        <div id="progress-bar"></div>
+      </div>
+      <p class="loader-hint">Загрузка...</p>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <img src="images/logo.png" alt="DENT SMILE" class="nav-logo-img" onerror="this.style.display='none'" />
+      <span class="nav-brand">DENT <span class="nav-accent">SMILE</span></span>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#services"  class="nav-link">Услуги</a></li>
+      <li><a href="#portfolio" class="nav-link">Работы</a></li>
+      <li><a href="#process"   class="nav-link">Процесс</a></li>
+      <li><a href="#about"     class="nav-link">О клинике</a></li>
+      <li><a href="#contact"   class="nav-link">Контакты</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Записаться</a>
+    <button class="burger" id="burger" aria-label="Меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE DRAWER -->
+  <div class="nav-drawer" id="nav-drawer" aria-hidden="true">
+    <button class="drawer-close" id="drawer-close" aria-label="Закрыть">&#10005;</button>
+    <ul class="drawer-links">
+      <li><a href="#hero"      class="drawer-link">Главная</a></li>
+      <li><a href="#services"  class="drawer-link">Услуги</a></li>
+      <li><a href="#portfolio" class="drawer-link">Работы</a></li>
+      <li><a href="#process"   class="drawer-link">Процесс</a></li>
+      <li><a href="#about"     class="drawer-link">О клинике</a></li>
+      <li><a href="#contact"   class="drawer-link">Контакты</a></li>
+    </ul>
+    <a href="#contact" class="drawer-cta">Записаться на приём</a>
+  </div>
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+
+  <!-- MAIN SCROLL CONTAINER -->
+  <div id="ui-layer">
+    <div class="stage">
+
+      <!-- SECTION 0: HERO -->
+      <section class="page is-active" data-index="0" id="hero">
+        <div class="hero-content">
+          <div class="hero-badge reveal-3d">&#10022; Стоматология будущего &#10022;</div>
+          <h1 class="hero-title reveal-3d">
+            DENT <span class="accent-gradient">SMILE</span>
+          </h1>
+          <p class="hero-subtitle reveal-3d">Ваша улыбка — наше искусство</p>
+          <p class="hero-desc reveal-3d">
+            Цифровой слепок зубов, импланты, люминиры, виниры.<br>
+            Без боли и с улыбкой.
+          </p>
+          <div class="hero-btns reveal-3d">
+            <a href="#contact"  class="btn-primary">Записаться на приём</a>
+            <a href="#services" class="btn-outline">Узнать цены</a>
+          </div>
+          <div class="hero-stats reveal-3d">
+            <div class="stat-item">
+              <span class="stat-num">14</span>
+              <span class="stat-label">лет опыта</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-num">8000+</span>
+              <span class="stat-label">пациентов</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-num">5</span>
+              <span class="stat-label">докторов</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-scroll-hint">
+          <span>Прокрутите вниз</span>
+          <div class="scroll-arrow">&#8595;</div>
+        </div>
+      </section>
+
+      <!-- SECTION 1: SERVICES -->
+      <section class="page" data-index="1" id="services">
+        <div class="section-content">
+          <div class="section-header reveal-3d">
+            <span class="section-eyebrow">Что мы предлагаем</span>
+            <h2 class="section-title">НАШИ <span class="accent-gradient">УСЛУГИ</span></h2>
+            <p class="section-subtitle">Современная дентальная помощь</p>
+          </div>
+          <div class="cards-grid reveal-3d">
+            <div class="service-card">
+              <div class="card-icon">&#129463;</div>
+              <h3 class="card-title">Имплантация</h3>
+              <p class="card-desc">Однодневные импланты All-on-4, All-on-6. Полное восстановление зубного ряда за один визит.</p>
+              <div class="card-tag">от 25&nbsp;000 &#8381;</div>
+            </div>
+            <div class="service-card">
+              <div class="card-icon">&#128516;</div>
+              <h3 class="card-title">Виниры</h3>
+              <p class="card-desc">Е-max виниры, восстановление зуба за 1 визит. Эстетика без компромиссов.</p>
+              <div class="card-tag">от 18&nbsp;000 &#8381;</div>
+            </div>
+            <div class="service-card">
+              <div class="card-icon">&#10024;</div>
+              <h3 class="card-title">Отбеливание</h3>
+              <p class="card-desc">Hollywood smile, профессиональное отбеливание Zoom. До 10 тонов за 1 час.</p>
+              <div class="card-tag">от 12&nbsp;000 &#8381;</div>
+            </div>
+            <div class="service-card">
+              <div class="card-icon">&#129306;</div>
+              <h3 class="card-title">Лечение</h3>
+              <p class="card-desc">Пломбирование, коронки, люминиры под ключ. Современные материалы и технологии.</p>
+              <div class="card-tag">от 5&nbsp;000 &#8381;</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: PORTFOLIO -->
+      <section class="page" data-index="2" id="portfolio">
+        <div class="section-content">
+          <div class="section-header reveal-3d">
+            <span class="section-eyebrow">Наши кейсы</span>
+            <h2 class="section-title">НАШИ <span class="accent-gradient">РАБОТЫ</span></h2>
+            <p class="section-subtitle">Результаты, которыми гордятся</p>
+          </div>
+          <div class="portfolio-grid reveal-3d">
+            <div class="portfolio-card">
+              <div class="portfolio-visual">
+                <div class="portfolio-icon">&#11088;</div>
+                <div class="portfolio-badge">Топ-кейс</div>
+              </div>
+              <div class="portfolio-info">
+                <h3 class="portfolio-title">Hollywood Smile</h3>
+                <p class="portfolio-desc">Полный комплекс 18 виниров. Полное преображение улыбки за 3 визита.</p>
+                <div class="portfolio-meta">
+                  <span class="meta-tag">18 виниров</span>
+                  <span class="meta-tag">3 визита</span>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-card">
+              <div class="portfolio-visual">
+                <div class="portfolio-icon">&#127942;</div>
+                <div class="portfolio-badge">3 дня</div>
+              </div>
+              <div class="portfolio-info">
+                <h3 class="portfolio-title">All-on-6</h3>
+                <p class="portfolio-desc">Полное восстановление зубов за 3 дня. Имплантация под седацией.</p>
+                <div class="portfolio-meta">
+                  <span class="meta-tag">6 имплантов</span>
+                  <span class="meta-tag">Седация</span>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-card">
+              <div class="portfolio-visual">
+                <div class="portfolio-icon">&#128142;</div>
+                <div class="portfolio-badge">1 час</div>
+              </div>
+              <div class="portfolio-info">
+                <h3 class="portfolio-title">Отбеливание Zoom</h3>
+                <p class="portfolio-desc">10 тонов за 1 час. Профессиональное отбеливание без вреда для эмали.</p>
+                <div class="portfolio-meta">
+                  <span class="meta-tag">+10 тонов</span>
+                  <span class="meta-tag">Zoom 4</span>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-card">
+              <div class="portfolio-visual">
+                <div class="portfolio-icon">&#10024;</div>
+                <div class="portfolio-badge">E.max</div>
+              </div>
+              <div class="portfolio-info">
+                <h3 class="portfolio-title">Виниры E.max</h3>
+                <p class="portfolio-desc">Улыбка мечты. Ультратонкие керамические виниры — природная красота.</p>
+                <div class="portfolio-meta">
+                  <span class="meta-tag">E.max</span>
+                  <span class="meta-tag">1 визит</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: PROCESS -->
+      <section class="page" data-index="3" id="process">
+        <div class="section-content">
+          <div class="section-header reveal-3d">
+            <span class="section-eyebrow">Прозрачность и забота</span>
+            <h2 class="section-title">КАК МЫ <span class="accent-gradient">РАБОТАЕМ</span></h2>
+            <p class="section-subtitle">Каждый шаг понятен — без сюрпризов</p>
+          </div>
+          <div class="process-steps reveal-3d">
+            <div class="process-step">
+              <div class="step-number">01</div>
+              <div class="step-icon">&#128248;</div>
+              <div class="step-content">
+                <h3 class="step-title">Снимок 3D</h3>
+                <p class="step-desc">Цифровой слепок зубов CEREC. Точность до 0,01&nbsp;мм — никакого гипса.</p>
+              </div>
+              <div class="step-connector"></div>
+            </div>
+            <div class="process-step">
+              <div class="step-number">02</div>
+              <div class="step-icon">&#128187;</div>
+              <div class="step-content">
+                <h3 class="step-title">План лечения</h3>
+                <p class="step-desc">Индивидуальный план и финальная цена — сразу, без скрытых платежей.</p>
+              </div>
+              <div class="step-connector"></div>
+            </div>
+            <div class="process-step">
+              <div class="step-number">03</div>
+              <div class="step-icon">&#128657;</div>
+              <div class="step-content">
+                <h3 class="step-title">Процедура</h3>
+                <p class="step-desc">Под седацией, безболезненно. Вы просыпаетесь с новой улыбкой.</p>
+              </div>
+              <div class="step-connector"></div>
+            </div>
+            <div class="process-step">
+              <div class="step-number">04</div>
+              <div class="step-icon">&#129309;</div>
+              <div class="step-content">
+                <h3 class="step-title">Гарантия</h3>
+                <p class="step-desc">5 лет гарантии на все работы. Полное сопровождение на каждом этапе.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: ABOUT -->
+      <section class="page" data-index="4" id="about">
+        <div class="section-content about-layout">
+          <div class="about-left reveal-3d">
+            <span class="section-eyebrow">С 2010 года</span>
+            <h2 class="section-title">О <span class="accent-gradient">КЛИНИКЕ</span></h2>
+            <p class="about-subtitle">Премиум-стоматология с 2010&nbsp;года</p>
+            <p class="about-desc">
+              DENT SMILE — клиника с цифровой визуализацией и современными протоколами лечения. Минимальные вторжения, максимальный результат. Каждый пациент получает персональный план и полное сопровождение от первого визита до финального результата.
+            </p>
+            <div class="about-cert">
+              <div class="cert-badge">ISO&nbsp;13485</div>
+              <span class="cert-label">Международный стандарт качества медицинских изделий</span>
+            </div>
+          </div>
+          <div class="about-right reveal-3d">
+            <div class="facts-grid">
+              <div class="fact-card">
+                <div class="fact-num">14</div>
+                <div class="fact-unit">лет</div>
+                <div class="fact-label">на рынке</div>
+              </div>
+              <div class="fact-card">
+                <div class="fact-num">8000+</div>
+                <div class="fact-unit"></div>
+                <div class="fact-label">пациентов</div>
+              </div>
+              <div class="fact-card">
+                <div class="fact-num">5</div>
+                <div class="fact-unit">врачей</div>
+                <div class="fact-label">экспертов</div>
+              </div>
+              <div class="fact-card">
+                <div class="fact-num">5</div>
+                <div class="fact-unit">лет</div>
+                <div class="fact-label">гарантии</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5: CONTACT -->
+      <section class="page" data-index="5" id="contact">
+        <div class="section-content contact-layout">
+          <div class="section-header reveal-3d">
+            <span class="section-eyebrow">Первичная консультация бесплатно</span>
+            <h2 class="section-title">ЗАПИСАТЬСЯ</h2>
+            <p class="section-subtitle">Оставьте заявку — мы перезвоним в течение 15&nbsp;минут</p>
+          </div>
+          <div class="contact-body reveal-3d">
+            <div class="contact-info">
+              <div class="contact-item">
+                <div class="contact-icon">&#128222;</div>
+                <div class="contact-detail">
+                  <span class="contact-label">Телефон</span>
+                  <a href="tel:+74997890123" class="contact-value">+7&nbsp;(499)&nbsp;789-01-23</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">&#9993;</div>
+                <div class="contact-detail">
+                  <span class="contact-label">Email</span>
+                  <a href="mailto:smile@dentsmile.ru" class="contact-value">smile@dentsmile.ru</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">&#128205;</div>
+                <div class="contact-detail">
+                  <span class="contact-label">Адрес</span>
+                  <span class="contact-value">Москва, ул. Белые Зубы, 5</span>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">&#128336;</div>
+                <div class="contact-detail">
+                  <span class="contact-label">Режим работы</span>
+                  <span class="contact-value">Пн–Суб: 9:00–21:00</span>
+                </div>
+              </div>
+            </div>
+            <form class="contact-form" onsubmit="handleForm(event)">
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Ваше имя</label>
+                  <input type="text" class="form-input" placeholder="Иван Иванов" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Телефон</label>
+                  <input type="tel" class="form-input" placeholder="+7 (999) 000-00-00" required />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Услуга</label>
+                <select class="form-input">
+                  <option value="">Выберите услугу...</option>
+                  <option>Имплантация All-on-4/6</option>
+                  <option>Виниры E.max</option>
+                  <option>Отбеливание Zoom</option>
+                  <option>Лечение / Коронки</option>
+                  <option>Консультация</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Сообщение (необязательно)</label>
+                <textarea class="form-input form-textarea" placeholder="Опишите ситуацию..."></textarea>
+              </div>
+              <button type="submit" class="btn-form">
+                <span>Записаться на консультацию</span>
+                <span class="btn-arrow">&#8594;</span>
+              </button>
+              <p class="form-note">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных</p>
+            </form>
+          </div>
+          <div class="footer-bottom reveal-3d">
+            <p class="footer-copy">&#169; 2024 DENT SMILE. Все права защищены.</p>
+            <p class="footer-license">Лицензия на медицинскую деятельность &#8470;&nbsp;ЛО-77-01-018623</p>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- .stage -->
+  </div><!-- #ui-layer -->
+
+  <!-- FORM SUCCESS TOAST -->
+  <div class="toast" id="toast">
+    <span class="toast-icon">&#9989;</span>
+    <span class="toast-msg">Заявка принята! Мы перезвоним вам скоро.</span>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
