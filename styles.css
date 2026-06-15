@@ -1,4 +1,4 @@
-﻿/* =============================================
+/* =============================================
    DENT SMILE — styles.css
    Theme: Ice Blue Medical (#4FC3F7 / #0288D1)
    Fonts: Playfair Display (headings) + Lato (body)
@@ -107,6 +107,12 @@ img { max-width: 100%; display: block; }
   gap: 16px;
 }
 
+.loader-logo-img {
+  height: 64px;
+  width: auto;
+  margin-bottom: 8px;
+}
+
 .loader-brand { color: var(--white); }
 .loader-accent { color: var(--primary); }
 
@@ -187,7 +193,7 @@ img { max-width: 100%; display: block; }
   font-family: var(--font-t);
   font-size: 0.88rem;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.9);
   letter-spacing: 0.06em;
   padding: 6px 14px;
   border-radius: 3px;
@@ -819,9 +825,9 @@ img { max-width: 100%; display: block; }
   font-family: var(--font-h);
   font-size: 3rem;
   font-weight: 700;
-  color: rgba(79, 195, 247, 0.2);
+  color: var(--primary);
   line-height: 1;
-  text-shadow: none;
+  text-shadow: var(--ts);
   letter-spacing: -0.02em;
 }
 
@@ -972,7 +978,7 @@ img { max-width: 100%; display: block; }
   font-family: var(--font-t);
   font-size: 0.78rem;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.9);
   margin-top: 4px;
   text-shadow: var(--ts);
 }
@@ -1147,7 +1153,7 @@ a.contact-value:hover { color: var(--primary); }
   font-family: var(--font-t);
   font-size: 0.72rem;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.9);
   text-align: center;
   text-shadow: none;
 }
@@ -1167,7 +1173,7 @@ a.contact-value:hover { color: var(--primary); }
   font-family: var(--font-t);
   font-size: 0.78rem;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.9);
   text-shadow: none;
   text-align: center;
 }
