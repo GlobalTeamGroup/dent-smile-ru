@@ -20,15 +20,7 @@
   --font-t: 'Lato', Arial, sans-serif;
 
   /* 8-direction black text-shadow for text over video */
-  --ts: 
-    1px  1px 0 rgba(0,0,0,1),
-   -1px -1px 0 rgba(0,0,0,1),
-    1px -1px 0 rgba(0,0,0,1),
-   -1px  1px 0 rgba(0,0,0,1),
-    2px  2px 0 rgba(0,0,0,0.8),
-   -2px -2px 0 rgba(0,0,0,0.8),
-    0 0 8px rgba(0,0,0,0.9),
-    0 0 20px rgba(0,0,0,0.7);
+  --ts: -1px -1px 1px #000, 1px -1px 1px #000, -1px 1px 1px #000, 1px 1px 1px #000, 0 0 6px rgba(0,0,0,.7);
 }
 
 /* === RESET & BASE === */
